@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
+import 'firebase/database';
 const config = {
     apiKey: "AIzaSyAjmVVkoad0kXE3liJQUdXzEQEKzY66Tv4",
     authDomain: "hack1-48fcc.firebaseapp.com",
@@ -15,7 +15,10 @@ if (!firebase.apps.length) {
 }
 
 const auth = firebase.auth();
+const db = firebase.database();
 
 export {
-    auth,
+
+    db, auth
 };
+

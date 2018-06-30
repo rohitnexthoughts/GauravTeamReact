@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {auth} from '../firebase';
+import {auth,db} from '../firebase';
 
 import {
     Link,
