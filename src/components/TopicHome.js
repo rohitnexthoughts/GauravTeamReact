@@ -70,7 +70,7 @@ class TopicHome extends Component {
             <div className="col-md-12">
                 <div className="panel panel-default">
                     <div className="panel-heading">
-                        <h1>TOPIC</h1>
+                        <h1><font size="20%" face="verdana">Topics</font></h1>
 
                         {this.props.authUser ?
                             <div className="notesFooter">
