@@ -64,8 +64,15 @@ class Home extends Component {
         return (
             <div className="notesWrapper">
                 <div className="notesHeader">
-                    <div className="heading">React & Firebase To-Do List</div>
+                    <div className="heading">
+                        <h1>Projects List</h1>
+                    </div>
                 </div>
+                {this.props.authUser ?
+                    <div className="noteButton">
+                        <ProjectForm addProject={this.addProject}/>
+                    </div>
+                    : ''}
                 <div className="notesBody">
                     {
                         this.state.projects.map((project) => {
@@ -80,11 +87,6 @@ class Home extends Component {
                         })
                     }
                 </div>
-                {this.props.authUser ?
-                    <div className="notesFooter">
-                        <ProjectForm addProject={this.addProject}/>
-                    </div>
-                    : ''}
             </div>
         );
     }
