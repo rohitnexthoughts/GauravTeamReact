@@ -105,3 +105,5 @@ class SignUpForm extends Component {
             ;
     }
 }
+
+export default AddUser;
