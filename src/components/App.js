@@ -64,8 +64,11 @@ class App extends Component {
                         component={() => <HomePage authUser={this.state.authUser}/>}
                     />
                     <Route
-                        exact path={routes.TOPIC}
-                        component={() => <TopicHome authUser={this.state.authUser}/>}
+                         path="/topic/:id"
+                         render = {({match})=>(
+                             <TopicHome authUser={this.state.authUser} projectId={match.params.id}/>
+                         )}
+
                     />
                     <Route
                         exact path={routes.ACCOUNT}

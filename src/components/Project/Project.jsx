@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Project.css';
 import PropTypes from 'prop-types';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 class Project extends Component {
 
@@ -18,12 +19,15 @@ class Project extends Component {
     render() {
         return (
             <div className="container">
-                { this.projectContent }
+                <font size="8%" face="verdana"><b>{ this.projectContent }</b></font>
                 <div className="closebtn fade-in btn btn-danger"
                      onClick={() => this.handleRemoveProject(this.projectId)}>
                     &times;
                 </div>
+                <Link to={"topic/" + this.projectId}>Edit</Link>
+
             </div>
+
         )
     }
 }

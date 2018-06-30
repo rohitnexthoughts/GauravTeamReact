@@ -30,7 +30,9 @@ const byPropKey = (propertyName, value) => () => ({
 class Topic extends Component {
     constructor(props) {
         super(props);
+
         this.state = {...INITIAL_STATE};
+
     }
 
     onSubmit = (event) => {
@@ -56,6 +58,7 @@ class Topic extends Component {
         } = this.state;
 
         return (
+
             <div className="form-group text-center col-md-6 panel-body">
                 <fieldset>
                     <form onSubmit={this.onSubmit}>
