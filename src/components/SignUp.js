@@ -73,44 +73,39 @@ class SignUpForm extends Component {
            ;
 
         return (
-
-            <form onSubmit={this.onSubmit}>
-                <div className="form-group text-center col-md-6">
-                    <div>
-                        <label className="col-md-3">UserName:</label>
-                        <input className="form-control"
-                               value={username}
-                               onChange={event => this.setState(byPropKey('username', event.target.value))}
-                               type="text"
-                               placeholder="Full Name"
-                        />
-                    </div>
+            <div className="form-group text-center col-md-6">
+                <form onSubmit={this.onSubmit}>
+                    <input className="form-control"
+                           value={username}
+                           onChange={event => this.setState(byPropKey('username', event.target.value))}
+                           type="text"
+                           placeholder="Full Name"/>
                     <input className="form-control"
                            value={email}
                            onChange={event => this.setState(byPropKey('email', event.target.value))}
                            type="text"
-                           placeholder="Email Address"
-                    />
-                    <input
+                           placeholder="Email Address"/>
+                    <input className="form-control"
                         value={passwordOne}
                         onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
                         type="password"
-                        placeholder="Password"
-                    />
-                    <input
+                        placeholder="Password"/>
+                    <input className="form-control"
                         value={passwordTwo}
                         onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
                         type="password"
-                        placeholder="Confirm Password"
-                    />
-                    <button disabled={isInvalid} type="submit">
-                        Sign Up
-                    </button>
+                        placeholder="Confirm Password"/>
+                    <input type='submit' value='SignUp' className='btn btn-primary btn-block'/>
+
+
+
+
                     <div className="alert-danger alert ">hello</div>
                     { error && <p>{error.message}</p> }
-                </div>
 
-            </form>
+
+                </form>
+            </div>
         )
             ;
     }
