@@ -64,7 +64,7 @@ class Home extends Component {
         return (
             <div className="container-fluid">
                 <div className="panel-heading">
-                        <h1>Projects List</h1>
+                        <h1><font size="20%" face="verdana">Projects List</font></h1>
                 </div>
                 {this.props.authUser ?
                     <div className="panel-body">

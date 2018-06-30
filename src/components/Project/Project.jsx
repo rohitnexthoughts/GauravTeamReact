@@ -18,7 +18,7 @@ class Project extends Component {
     render() {
         return (
             <div className="container">
-                { this.projectContent }
+                <font size="8%" face="verdana"><b>{ this.projectContent }</b></font>
                 <div className="closebtn fade-in btn btn-danger"
                      onClick={() => this.handleRemoveProject(this.projectId)}>
                     &times;
