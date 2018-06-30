@@ -31,6 +31,7 @@ class TopicHome extends Component {
                 id: snap.key,
                 topicContent: snap.val().topicContent,
                 userUid: snap.val().userUid,
+                projectId: snap.val().projectId,
             })
 
             this.setState({
@@ -52,7 +53,11 @@ class TopicHome extends Component {
     }
 
     addTopic(topic) {
-        this.database.push().set({userUid: this.props.authUser.uid, topicContent: topic});
+        this.database.push().set({
+            userUid: this.props.authUser.uid,
+            topicContent: topic,
+            projectId: this.props.projectId
+        });
     }
 
     removeTopic(topicId) {
@@ -74,7 +79,8 @@ class TopicHome extends Component {
                 <div className="notesBody">
                     {
                         this.state.topics.map((topic) => {
-                            if (this.props.authUser && (topic.userUid == this.props.authUser.uid)) {
+
+                            if (this.props.authUser && (topic.userUid == this.props.authUser.uid) && (topic.projectId == this.props.projectId)) {
                                 return (
                                     <Topic topicContent={topic.topicContent}
                                            topicId={topic.id}
