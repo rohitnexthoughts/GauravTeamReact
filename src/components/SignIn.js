@@ -66,10 +66,10 @@ class SignInForm extends Component {
             email === '';
 
         return (
-            <div class="panel panel-default" className="col-md-6 panel-body">
+            <div className="panel panel-default col-md-6 panel-body">
                 <form onSubmit={this.onSubmit}>
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
+                    <div className="panel-heading">
+                        <h4 className="panel-title">
                         </h4>
                     </div>
                     <div>
