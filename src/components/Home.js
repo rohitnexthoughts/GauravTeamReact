@@ -49,11 +49,23 @@ class Home extends Component {
                 projects: previousProjects
             })
         })
+        this.sendFeedbackEmail('template1','abhinav.sri2009@gmail.com','gaurav.gupta@nexthoughts.com',{to:'gaurav.gupta@nexthoughts.com',name:'gaurav'});
     }
 
     addProject(project) {
         this.database.push().set({userUid: this.props.authUser.uid, projectContent: project});
     }
+
+    sendFeedbackEmail (templateId, senderEmail, receiverEmail, feedback) {
+        alert("Send email method");
+        window.emailjs.send('gmail',templateId,feedback) .then(res => {
+            console.log("succes"+res)
+                .catch(err =>
+                    alert('errrrrrrrrr'+err))
+
+    })
+    }
+
 
     removeProject(projectId) {
         console.log("from the parent: " + projectId);
