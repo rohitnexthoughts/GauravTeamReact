@@ -42,7 +42,7 @@ class SignInForm extends Component {
         auth.doSignInWithEmailAndPassword(email, password)
             .then((result) => {
                 this.setState(() => ({ ...INITIAL_STATE }));
-                console.log("Result::::"+result.user.email);
+                localStorage.setItem('user', JSON.stringify(result.user));
                 history.push(routes.HOME);
             })
             .catch(error => {

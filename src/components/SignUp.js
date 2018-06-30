@@ -46,6 +46,7 @@ class SignUpForm extends Component {
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState(() => ({...INITIAL_STATE}));
+                localStorage.setItem('user', JSON.stringify(authUser));
                 history.push(routes.HOME);
             })
             .catch(error => {
@@ -75,6 +76,11 @@ class SignUpForm extends Component {
         return (
 
             <form onSubmit={this.onSubmit}>
+
+
+
+
+
                 <div className="form-group text-center col-md-6">
                     <div>
                         <label className="col-md-3">UserName:</label>

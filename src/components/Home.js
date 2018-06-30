@@ -14,22 +14,29 @@ import Navigation from './Navigation';
 import * as routes from '../constants/routes';
 import {firebase} from '../firebase';
 
-
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            authUser: null,
+            user: {},
         };
+        // console.log("Result::::" + this.state.user);
+        this.hydrateStateWithLocalStorage = this.hydrateStateWithLocalStorage.bind(this)
+    }
+
+    hydrateStateWithLocalStorage() {
+        // for all items in state
+        console.log(JSON.parse(localStorage.getItem('user')));
+        this.setState({
+            user: JSON.parse(localStorage.getItem('user')),
+        })
+        // console.log("Result::::" + this.state.user);
+
     }
 
     componentDidMount() {
-        firebase.auth.onAuthStateChanged(authUser => {
-            authUser
-                ? this.setState(() => ({ authUser }))
-                : this.setState(() => ({ authUser: null }));
-
-        });
+       this.hydrateStateWithLocalStorage()
+        console.log("Result::::" + this.state.user.email);
     }
 
 
@@ -37,7 +44,7 @@ class Home extends Component {
         return (
 
             <div >
-                <h1> HomePage1234566 welcome to login user::: </ h1 >
+                <h1> HomePage1234566 welcome to login user:::</ h1 >
             </div>
 
         )
