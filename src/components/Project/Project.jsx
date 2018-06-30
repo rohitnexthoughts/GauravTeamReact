@@ -19,12 +19,14 @@ class Project extends Component {
     render() {
         return (
             <div className="container">
-                <font size="8%" face="verdana"><b>{ this.projectContent }</b></font>
+                <Link to={"topic/" + this.projectId}>
+                    <font size="8%" face="verdana"><b>{this.projectContent}</b></font>
+                </Link>
+
                 <div className="closebtn fade-in btn btn-danger"
                      onClick={() => this.handleRemoveProject(this.projectId)}>
                     &times;
                 </div>
-                <Link to={"topic/" + this.projectId}>Edit</Link>
 
             </div>
 
