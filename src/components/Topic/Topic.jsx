@@ -20,13 +20,13 @@ class topic extends Component{
             <div className = "container" >
                 <div className = "col-md-offset-3 col-md-6" >
                     <div className = "panel panel-default" >
-                        <div className = "panel-heading" > TOPIC NAME:-- {this.topicContent}
+                        <div className = "panel-heading" > TOPIC NAME : {this.topicContent}
                         <span className="closebtn"
                               onClick={() => this.handleRemovetopic(this.topicId)}>
               &times;
                  </span></div>
-                        <div className="panel-body ">
-                            Description:---->
+                        <div className="panel-body">
+                            DESCRIPTION :
                         </div>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ class TopicForm extends Component {
                               type="textarea"
                               placeholder="Description"/>
 
-                    <button className="noteButton" onClick={this.writeTopic}>Add topic</button>
+                    <button className="btn btn-group btn-primary" onClick={this.writeTopic}>Add topic</button>
 
                 </fieldset>
             </div>
