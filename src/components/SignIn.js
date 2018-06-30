@@ -9,7 +9,7 @@ const SignInPage = ({history}) =>
     <div className="col-md-6">
         <h1 className="page-header">LogIn</h1>
         <SignInForm history={history}/>
-        {/*<SignUpLink />*/}
+        <SignUpLink />
     </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -73,7 +73,7 @@ class SignInForm extends Component {
                     <div class="panel-body">
                         <form className='form-group' onSubmit={this.onSubmit}>
                             <input value={email} onChange={event => this.setState(byPropKey('email', event.target.value))}
-                                   name={'username'} type='email' placeholder='Email'
+                                   name={'email'} type='email' placeholder='Email'
                                    className='form-control' required/>
                             <input value={password} onChange={event => this.setState(byPropKey('password', event.target.value))}
                                    name={'password'} type='password' placeholder='Password'
