@@ -33,12 +33,12 @@ class ProjectForm extends Component{
 
     render(){
         return(
-            <div className="formWrapper">
-                <input className="noteInput"
+            <div className="row formWrapper center-block">
+                <input className="text-info col-lg-10"
                 placeholder="Write Project Name"
                 value={this.state.newProjectContent}
                 onChange={this.handleUserInput} />
-                <button className="noteButton"
+                <button className="btn btn-group col-lg-2"
                 onClick={this.writeProject}>Add Project</button>
             </div>
         )
