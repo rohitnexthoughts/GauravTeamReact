@@ -62,18 +62,19 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="notesWrapper">
-                <div className="notesHeader">
-                    <div className="heading">
+            <div className="container-fluid">
+                <div className="panel-heading">
                         <h1>Projects List</h1>
-                    </div>
                 </div>
                 {this.props.authUser ?
-                    <div className="noteButton">
-                        <ProjectForm addProject={this.addProject}/>
+                    <div className="panel-body">
+                        <div style={{ background: '#9e9e9e', width: '90vw', height: '5vh' }}>
+                            <ProjectForm addProject={this.addProject}/>
+                        </div>
                     </div>
+
                     : ''}
-                <div className="notesBody">
+                <div className="panel-body">
                     {
                         this.state.projects.map((project) => {
                             if (this.props.authUser && (project.userUid == this.props.authUser.uid)) {
@@ -92,4 +93,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Home
