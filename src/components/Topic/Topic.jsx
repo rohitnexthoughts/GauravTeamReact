@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './topic.css';
+import './Topic.css';
 import PropTypes from 'prop-types';
 
 class topic extends Component{
