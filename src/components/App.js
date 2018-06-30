@@ -5,7 +5,7 @@ import {
 import React, { Component } from 'react';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
-
+import TopicPage from './Topic';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
@@ -68,6 +68,10 @@ class App extends Component {
                     <Route
                         exact path={routes.ACCOUNT}
                         component={() => <AccountPage />}
+                    />
+                    <Route
+                        exact path={routes.TOPIC}
+                        component={() => <TopicPage />}
                     />
                 </div>
             </Router>

@@ -10,7 +10,7 @@ import * as routes from '../constants/routes';
 
 const SignUpPage = ({history}) =>
     <div>
-        <h1>SignUp</h1>
+        <h1 className="page-header">SignUp</h1>
         <SignUpForm history={history}/>
     </div>
 
@@ -66,45 +66,45 @@ class SignUpForm extends Component {
         } = this.state;
 
         const isInvalid =
-            passwordOne !== passwordTwo ||
-            passwordOne === '' ||
-            email === '' ||
-            username === ''
-           ;
+                passwordOne !== passwordTwo ||
+                passwordOne === '' ||
+                email === '' ||
+                username === ''
+            ;
 
         return (
-            <div className="form-group text-center col-md-6">
-                <form onSubmit={this.onSubmit}>
-                    <input className="form-control"
-                           value={username}
-                           onChange={event => this.setState(byPropKey('username', event.target.value))}
-                           type="text"
-                           placeholder="Full Name"/>
-                    <input className="form-control"
-                           value={email}
-                           onChange={event => this.setState(byPropKey('email', event.target.value))}
-                           type="text"
-                           placeholder="Email Address"/>
-                    <input className="form-control"
-                        value={passwordOne}
-                        onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-                        type="password"
-                        placeholder="Password"/>
-                    <input className="form-control"
-                        value={passwordTwo}
-                        onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-                        type="password"
-                        placeholder="Confirm Password"/>
-                    <input type='submit' value='SignUp' className='btn btn-primary btn-block'/>
+            <div className="form-group text-center col-md-6 panel-body">
+                <fieldset>
+                    <form onSubmit={this.onSubmit}>
+                        <input className="form-control"
+                               value={username}
+                               onChange={event => this.setState(byPropKey('username', event.target.value))}
+                               type="text"
+                               placeholder="Full Name"/>
+                        <input className="form-control"
+                               value={email}
+                               onChange={event => this.setState(byPropKey('email', event.target.value))}
+                               type="text"
+                               placeholder="Email Address"/>
+                        <input className="form-control"
+                               value={passwordOne}
+                               onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                               type="password"
+                               placeholder="Password"/>
+                        <input className="form-control"
+                               value={passwordTwo}
+                               onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                               type="password"
+                               placeholder="Confirm Password"/>
+                        <input type='submit' value='SignUp' className='btn btn-primary btn-block'/>
 
 
+                        {/*<div className="alert-danger alert ">hello</div>*/}
+                        {/*{ error && <p>{error.message}</p> }*/}
 
 
-                    {/*<div className="alert-danger alert ">hello</div>*/}
-                    {/*{ error && <p>{error.message}</p> }*/}
-
-
-                </form>
+                    </form>
+                </fieldset>
             </div>
         )
             ;

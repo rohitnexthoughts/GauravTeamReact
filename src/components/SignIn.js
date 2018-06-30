@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
 import {SignUpLink} from './SignUp';
+import {TopicLink} from './Topic';
 import {auth} from '../firebase';
 import * as routes from '../constants/routes';
 
@@ -10,6 +11,7 @@ const SignInPage = ({history}) =>
         <h1 className="page-header">LogIn</h1>
         <SignInForm history={history}/>
         <SignUpLink />
+        <TopicLink/>
     </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -64,13 +66,13 @@ class SignInForm extends Component {
             email === '';
 
         return (
-            <div class="panel panel-default" className="col-md-6">
+            <div class="panel panel-default" className="col-md-6 panel-body">
                 <form onSubmit={this.onSubmit}>
                     <div class="panel-heading">
                         <h4 class="panel-title">
                         </h4>
                     </div>
-                    <div class="panel-body">
+                    <div>
                         <form className='form-group' onSubmit={this.onSubmit}>
                             <input value={email} onChange={event => this.setState(byPropKey('email', event.target.value))}
                                    name={'email'} type='email' placeholder='Email'
