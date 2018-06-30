@@ -64,13 +64,11 @@ class Home extends Component {
         return (
             <div className="container-fluid">
                 <div className="panel-heading">
-                        <h1><font size="20%" face="verdana">Projects List</font></h1>
+                    <h1><font size="20%" face="verdana">Projects List</font></h1>
                 </div>
                 {this.props.authUser ?
                     <div className="panel-body">
-                        <div style={{ background: '#9e9e9e', width: '90vw', height: '5vh' }}>
-                            <ProjectForm addProject={this.addProject}/>
-                        </div>
+                        <ProjectForm addProject={this.addProject}/>
                     </div>
 
                     : ''}

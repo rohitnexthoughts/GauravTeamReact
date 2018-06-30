@@ -62,32 +62,33 @@ class TopicHome extends Component {
 
     render() {
         return (
-            <div className="notesWrapper">
-                <div className="notesHeader">
-                    <div className="heading">React & Firebase To-Do List</div>
+            <div className="container-fluid">
+                <div className="panel-heading">
+                    <h1><font size="20%" face="verdana">Topics List</font></h1>
                 </div>
+                {this.props.authUser ?
+                    <div className="panel-body">
+                        <TopicForm addTopic={this.addTopic}/>
+                    </div>
+                    : ''}
                 <div className="notesBody">
                     {
                         this.state.topics.map((topic) => {
                             if (this.props.authUser && (topic.userUid == this.props.authUser.uid)) {
                                 return (
                                     <Topic topicContent={topic.topicContent}
-                                             topicId={topic.id}
-                                             key={topic.id}
-                                             removeTopic={this.removeTopic}/>
+                                           topicId={topic.id}
+                                           key={topic.id}
+                                           removeTopic={this.removeTopic}/>
                                 )
                             }
                         })
                     }
                 </div>
-                {this.props.authUser ?
-                    <div className="notesFooter">
-                        <TopicForm addTopic={this.addTopic}/>
-                    </div>
-                    : ''}
+
             </div>
         );
     }
 }
 
-export default TopicHome;
+export default TopicHome
