@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {auth, db} from '../firebase';
+import {auth} from '../firebase';
+import {db} from '../firebase/firebase'
 
 import * as routes from '../constants/routes';
 
@@ -24,31 +25,48 @@ class SignUpForm extends Component {
     constructor(props) {
         super(props);
         this.state = {...INITIAL_STATE};
+        this.database = db.ref().child('users');
+
     }
 
     onSubmit = (event) => {
         const {
             username,
             email,
-            passwordOne,
         } = this.state;
+        alert("Add user"+username)
 
         const {
             history,
         } = this.props;
+        var service_id = "default_service";
+        var template_id = "template1";
+        var template_params = {
+            "to": email,
+            "name": username,
+            "ink": "localhost:3000/signin",
+            "from": "Gaurav Gupta"
+        }
+        this.sendFeedbackEmail(template_id,'abhinav.sri2009@gmail.com','gaurav.gupta@nexthoughts.com',template_params);
 
-        auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-            .then(authUser => {
-                this.setState(() => ({...INITIAL_STATE}));
-                history.push(routes.HOME);
-            })
-            .catch(error => {
-                this.setState(byPropKey('error', error));
-            });
+        this.database.push().set({createdBy: this.props.authUser.uid, username: username,email:email});
+
+
+
 
         event.preventDefault();
     };
 
+    sendFeedbackEmail (templateId, senderEmail, receiverEmail, feedback) {
+        alert("Send email");
+        alert("Send email method");
+        window.emailjs.send('gmail',templateId,feedback) .then(res => {
+            console.log("succes"+res)
+                .catch(err =>
+                    alert('errrrrrrrrr'+err))
+
+        })
+    }
     render() {
         const {
             username,
