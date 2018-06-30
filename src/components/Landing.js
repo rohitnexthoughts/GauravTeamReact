@@ -1,8 +1,9 @@
 import React from 'react';
+import SignUpPage, {SignUpForm} from './SignUp';
 
 const LandingPage = () =>
     <div>
-        <h1>Landing Page</h1>
+        <SignUpPage />
     </div>
 
 export default LandingPage;
