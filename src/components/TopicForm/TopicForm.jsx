@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './TopicForm.css';
+import '../App.css';
 
 class TopicForm extends Component {
     constructor(props) {
@@ -27,20 +27,29 @@ class TopicForm extends Component {
 
         // Set newNoteContent back to an empty string.
         this.setState({
-            newTopicContent: '',
-        })
+            newTopicContent: ''})
     }
 
     render() {
         return (
-            <div className="formWrapper">
-                <input className="noteInput"
+
+            <div className="form-group text-center col-md-offset-3  col-md-6 panel-body">
+                <fieldset>
+
+                    <input className="form-control"
                        placeholder="Write topic Name"
                        value={this.state.newtopicContent}
-                       onChange={this.handleUserInput}/>
-                <button className="noteButton"
-                        onClick={this.writeTopic}>Add topic
-                </button>
+                       onChange={this.handleUserInput} />
+
+                    <textarea className="form-control"
+                              value={this.state.description}
+
+                              type="textarea"
+                              placeholder="Description"/>
+
+                    <button className="noteButton" onClick={this.writeTopic}>Add topic</button>
+
+                </fieldset>
             </div>
         )
     }
