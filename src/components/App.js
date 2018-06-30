@@ -15,6 +15,7 @@ import Navigation from './Navigation';
 
 import * as routes from '../constants/routes';
 import {firebase} from '../firebase';
+import AddUser from './AddUser';
 
 
 class App extends Component {
@@ -44,19 +45,19 @@ class App extends Component {
 
                     <Route
                         exact path={routes.LANDING}
-                        component={() => <LandingPage />}
+                        component={() => <LandingPage/>}
                     />
                     <Route
                         exact path={routes.SIGN_UP}
-                        component={() => <SignUpPage />}
+                        component={() => <SignUpPage/>}
                     />
                     <Route
                         exact path={routes.SIGN_IN}
-                        component={() => <SignInPage />}
+                        component={() => <SignInPage/>}
                     />
                     <Route
                         exact path={routes.PASSWORD_FORGET}
-                        component={() => <PasswordForgetPage />}
+                        component={() => <PasswordForgetPage/>}
                     />
                     <Route
                         exact path={routes.HOME}
@@ -68,7 +69,11 @@ class App extends Component {
                     />
                     <Route
                         exact path={routes.ACCOUNT}
-                        component={() => <AccountPage />}
+                        component={() => <AccountPage/>}
+                    />
+                    <Route
+                        exact path={routes.ADD_USER}
+                        component={() => <AddUser/>}
                     />
                 </div>
             </Router>
