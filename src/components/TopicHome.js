@@ -62,30 +62,34 @@ class TopicHome extends Component {
 
     render() {
         return (
-            <div className="notesWrapper">
-                <div className="notesHeader">
-                    <div className="heading">React & Firebase To-Do List</div>
-                </div>
-                <div className="notesBody">
-                    {
-                        this.state.topics.map((topic) => {
-                            if (this.props.authUser && (topic.userUid == this.props.authUser.uid)) {
-                                return (
-                                    <Topic topicContent={topic.topicContent}
-                                             topicId={topic.id}
-                                             key={topic.id}
-                                             removeTopic={this.removeTopic}/>
-                                )
-                            }
-                        })
-                    }
-                </div>
-                {this.props.authUser ?
-                    <div className="notesFooter">
-                        <TopicForm addTopic={this.addTopic}/>
+            <div className="col-md-12">
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <h1>TOPIC</h1>
+
+                        {this.props.authUser ?
+                            <div className="notesFooter">
+                                <TopicForm addTopic={this.addTopic}/>
+                            </div>
+                            : ''}
                     </div>
-                    : ''}
+                    <div className="notesBody">
+                        {
+                            this.state.topics.map((topic) => {
+                                if (this.props.authUser && (topic.userUid == this.props.authUser.uid)) {
+                                    return (
+                                        <Topic topicContent={topic.topicContent}
+                                               topicId={topic.id}
+                                               key={topic.id}
+                                               removeTopic={this.removeTopic}/>
+                                    )
+                                }
+                            })
+                        }
+                    </div>
+                </div>
             </div>
+
         );
     }
 }
