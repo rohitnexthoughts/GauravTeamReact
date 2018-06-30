@@ -12,18 +12,25 @@ class topic extends Component{
     }
 
     handleRemovetopic(id){
-        this.props.removetopic(id);
+        this.props.removeTopic(id);
     }
 
     render(){
         return(
-            <div className="note fade-in">
-                <span className="closebtn" 
-                      onClick={() => this.handleRemovetopic(this.topicId)}>
-                      &times;
-                </span>
-                <p className="noteContent">{ this.topicContent }</p>
-            </div>
+            <div className = "container" >
+                <div className = "col-md-offset-3 col-md-6" >
+                    <div className = "panel panel-default" >
+                        <div className = "panel-heading" > TOPIC NAME:-- {this.topicContent}
+                        <span className="closebtn"
+                              onClick={() => this.handleRemovetopic(this.topicId)}>
+              &times;
+                 </span></div>
+                        <div className="panel-body ">
+                            Description:---->
+                        </div>
+                    </div>
+                </div>
+                </div>
         )
     }
 }
