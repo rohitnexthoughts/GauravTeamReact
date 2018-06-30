@@ -99,8 +99,10 @@ class SignUpForm extends Component {
                         <input type='submit' value='SignUp' className='btn btn-primary btn-block'/>
 
 
-                        {/*<div className="alert-danger alert ">hello</div>*/}
-                        {/*{ error && <p>{error.message}</p> }*/}
+
+
+                    <div className="alert-danger alert ">hello</div>
+                    { error && <p>{error.message}</p> }
 
 
                     </form>
