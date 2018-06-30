@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Project from './Project/Project';
 import ProjectForm from './ProjectForm/ProjectForm';
 // import { DB_CONFIG } from './Config/config';
@@ -9,7 +9,7 @@ import {db} from '../firebase/firebase'
 
 class Home extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.addProject = this.addProject.bind(this);
         this.removeProject = this.removeProject.bind(this);
@@ -30,6 +30,7 @@ class Home extends Component {
             previousProjects.push({
                 id: snap.key,
                 projectContent: snap.val().projectContent,
+                userUid: snap.val().userUid,
             })
 
             this.setState({
@@ -51,7 +52,7 @@ class Home extends Component {
     }
 
     addProject(project) {
-        this.database.push().set({projectContent: project});
+        this.database.push().set({userUid: this.props.authUser.uid, projectContent: project});
     }
 
     removeProject(projectId) {
@@ -68,18 +69,22 @@ class Home extends Component {
                 <div className="notesBody">
                     {
                         this.state.projects.map((project) => {
-                            return (
-                                <Project projectContent={project.projectContent}
-                                      projectId={project.id}
-                                      key={project.id}
-                                      removeProject={this.removeProject}/>
-                            )
+                            if (this.props.authUser && (project.userUid == this.props.authUser.uid)) {
+                                return (
+                                    <Project projectContent={project.projectContent}
+                                             projectId={project.id}
+                                             key={project.id}
+                                             removeProject={this.removeProject}/>
+                                )
+                            }
                         })
                     }
                 </div>
-                <div className="notesFooter">
-                    <ProjectForm addProject={this.addProject}/>
-                </div>
+                {this.props.authUser ?
+                    <div className="notesFooter">
+                        <ProjectForm addProject={this.addProject}/>
+                    </div>
+                    : ''}
             </div>
         );
     }
