@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Project.css';
 import PropTypes from 'prop-types';
 
-class Project extends Component{
+class Project extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.projectContent = props.projectContent;
         this.projectId = props.projectId;
         this.handleRemoveProject = this.handleRemoveProject.bind(this);
     }
 
-    handleRemoveProject(id){
+    handleRemoveProject(id) {
         this.props.removeProject(id);
     }
 
-    render(){
-        return(
-            <div className="note fade-in">
-                <span className="closebtn" 
-                      onClick={() => this.handleRemoveProject(this.projectId)}>
-                      &times;
-                </span>
-                <p className="noteContent">{ this.projectContent }</p>
+    render() {
+        return (
+            <div className="container">
+                { this.projectContent }
+                <div className="closebtn fade-in btn btn-danger"
+                     onClick={() => this.handleRemoveProject(this.projectId)}>
+                    &times;
+                </div>
             </div>
         )
     }
