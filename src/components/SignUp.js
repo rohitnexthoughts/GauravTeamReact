@@ -46,6 +46,8 @@ class SignUpForm extends Component {
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState(() => ({...INITIAL_STATE}));
+                console.log("Result::::"+result.user.email);
+                history.push(routes.HOME);
             })
             .catch(error => {
                 this.setState(byPropKey('error', error));
@@ -68,8 +70,8 @@ class SignUpForm extends Component {
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
             email === '' ||
-            username === ''||
-            phoneNumber==='';
+            username === ''
+           ;
 
         return (
 
