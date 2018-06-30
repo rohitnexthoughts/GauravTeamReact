@@ -99,4 +99,4 @@ class TopicHome extends Component {
     }
 }
 
-export default TopicHome;
+export default TopicHome
