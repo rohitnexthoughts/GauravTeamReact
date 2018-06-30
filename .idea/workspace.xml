@@ -145,8 +145,8 @@
       <file leaf-file-name="SignUp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SignUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="49" column="42" lean-forward="false" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+            <state relative-caret-position="399">
+              <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -425,7 +425,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530337895812</updated>
-      <workItem from="1530337900620" duration="993000" />
+      <workItem from="1530337900620" duration="1143000" />
     </task>
     <task id="LOCAL-00001" summary="remove phone number from signup page">
       <created>1530339007219</created>
@@ -434,11 +434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530339007219</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Redirect home page after signup link">
+      <created>1530339153691</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530339153691</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="993000" />
+    <option name="totallyTimeSpent" value="1143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-5" width="1856" height="1085" extended-state="6" />
@@ -482,7 +489,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove phone number from signup page" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove phone number from signup page" />
+    <MESSAGE value="Redirect home page after signup link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redirect home page after signup link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -615,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SignUp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="49" column="42" lean-forward="false" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+        <state relative-caret-position="399">
+          <caret line="48" column="42" lean-forward="true" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
