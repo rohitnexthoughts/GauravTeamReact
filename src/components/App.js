@@ -9,6 +9,7 @@ import SignUpPage, {SignUpForm} from './SignUp';
 import SignInPage, {SignInForm} from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
+import TopicHome from './TopicHome';
 import AccountPage from './Account';
 import Navigation from './Navigation';
 
@@ -46,25 +47,29 @@ class App extends Component {
                         component={() => <LandingPage />}
                     />
                     <Route
-                     exact path={routes.SIGN_UP}
-                     component={() => <SignUpPage />}
-                     />
-                     <Route
-                     exact path={routes.SIGN_IN}
-                     component={() => <SignInPage />}
-                     />
-                     <Route
-                     exact path={routes.PASSWORD_FORGET}
-                     component={() => <PasswordForgetPage />}
-                     />
-                     <Route
-                     exact path={routes.HOME}
-                     component={() => <HomePage authUser={this.state.authUser}/>}
-                     />
-                     <Route
-                     exact path={routes.ACCOUNT}
-                     component={() => <AccountPage />}
-                     />
+                        exact path={routes.SIGN_UP}
+                        component={() => <SignUpPage />}
+                    />
+                    <Route
+                        exact path={routes.SIGN_IN}
+                        component={() => <SignInPage />}
+                    />
+                    <Route
+                        exact path={routes.PASSWORD_FORGET}
+                        component={() => <PasswordForgetPage />}
+                    />
+                    <Route
+                        exact path={routes.HOME}
+                        component={() => <HomePage authUser={this.state.authUser}/>}
+                    />
+                    <Route
+                        exact path={routes.TOPIC}
+                        component={() => <TopicHome authUser={this.state.authUser}/>}
+                    />
+                    <Route
+                        exact path={routes.ACCOUNT}
+                        component={() => <AccountPage />}
+                    />
                 </div>
             </Router>
         );
