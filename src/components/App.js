@@ -63,7 +63,7 @@ class App extends Component {
                     />
                     <Route
                         exact path={routes.HOME}
-                        component={() => <HomePage/>}
+                        component={() => <HomePage authUser={this.state.authUser}/>}
                     />
                     <Route
                         exact path={routes.ACCOUNT}
