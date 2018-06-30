@@ -100,8 +100,8 @@ class SignUpForm extends Component {
 
 
 
-                    {/*<div className="alert-danger alert ">hello</div>*/}
-                    {/*{ error && <p>{error.message}</p> }*/}
+                    <div className="alert-danger alert ">hello</div>
+                    { error && <p>{error.message}</p> }
 
 
                 </form>
