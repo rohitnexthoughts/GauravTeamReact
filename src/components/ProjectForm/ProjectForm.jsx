@@ -38,7 +38,7 @@ class ProjectForm extends Component{
                 placeholder="Write Project Name"
                 value={this.state.newProjectContent}
                 onChange={this.handleUserInput} />
-                <button className="btn btn-group col-lg-2"
+                <button className="btn btn-group col-lg-2 btn-primary"
                 onClick={this.writeProject}>Add Project</button>
             </div>
         )
