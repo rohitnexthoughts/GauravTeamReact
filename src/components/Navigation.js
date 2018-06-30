@@ -11,7 +11,7 @@ const Navigation = ({authUser}) =>
     </div>
 
 const NavigationAuth = () =>
-    <ul>
+    <ul className="nav navbar">
         <li><Link to={routes.LANDING}>Landing</Link></li>
         <li><Link to={routes.HOME}>Home</Link></li>
         <li><Link to={routes.ACCOUNT}>Account</Link></li>

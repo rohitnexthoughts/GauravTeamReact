@@ -102,12 +102,6 @@ class SignUpForm extends Component {
                         type="password"
                         placeholder="Confirm Password"
                     />
-                    <input
-                        value={phoneNumber}
-                        onChange={event => this.setState(byPropKey('phoneNumber', event.target.value))}
-                        type="text"
-                        placeholder="phoneNumber"
-                    />
                     <button disabled={isInvalid} type="submit">
                         Sign Up
                     </button>
